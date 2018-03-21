@@ -50,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, InfoActivity.class);
             startActivity(intent);
         }
+        if (menuItem.getItemId() == R.id.reset)
+            game.resetScores();
+        showUserScore();
+        showComputerScore();
         return true;
     }
 
