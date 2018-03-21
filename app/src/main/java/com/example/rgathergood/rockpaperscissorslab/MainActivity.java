@@ -1,8 +1,12 @@
 package com.example.rgathergood.rockpaperscissorslab;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,6 +26,22 @@ public class MainActivity extends AppCompatActivity {
         paperButton = (Button)findViewById(R.id.paperButton);
         scissorsButton = (Button)findViewById(R.id.scissorsButton);
         answerTextView= (TextView)findViewById(R.id.answerTextView);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.activity_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        if(menuItem.getItemId() == R.id.howToPlay) {
+            Intent intent = new Intent(this, InfoActivity.class);
+            startActivity(intent);
+        }
+        return true;
     }
 
     public void onRockButtonClicked(View button) {
@@ -60,6 +80,13 @@ public class MainActivity extends AppCompatActivity {
 //
 //        String result = game.play(userChoice);
 //        answerTextView.setText(result);
+//    }
+
+
+
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        if(item.getItemId() == R.id.)
 //    }
 
 
